@@ -13,14 +13,17 @@ It's been a while since publishing my last repo! I spent a while learning about 
 - Hidden size: 4
 - Output size: 1
  
-# How it works:
-- It randomizes the weights and biases
-- Then defines the neural network class
-- Once we make an instance of the network, we call train() and then print the results
-- Inside of train(), there is a loop that runs for the amount of epochs. It first calculates the forward pass, with a2 being the final output of the model, then the loss is calculated, and then it calls self.backward(...) which manually derives W1, b1, W2, and b2 and returns their gradients. To adjust the parameters, it multiplies the gradients by the learning rate and subtract that from the parameter.
+# How It Works
+1. Initialization: Randomizes weights and biases for all layers.
+2. Definition: Creates the core structural neural network class.
+3. Training: Runs a training loop for a set number of epochs.
+   * Calculates the forward pass to get the final output (`a2`).
+   * Computes the Mean Squared Error (MSE) loss.
+   * Calls `self.backward()` to manually derive the gradients for `W1`, `b1`, `W2`, and `b2`.
+   * Updates parameters by subtracting the gradients multiplied by the learning rate.
 
 # Example Output:
-```
+```text
 0.24947201006750402
 0.1297168294397139
 0.12953097206021658
